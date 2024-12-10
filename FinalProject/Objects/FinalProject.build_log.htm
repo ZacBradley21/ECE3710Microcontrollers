@@ -1,0 +1,487 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: µVision V5.35.0.0
+Copyright (C) 2021 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: Brady Forbush, Utah State University, LIC=----
+ 
+Tool Versions:
+Toolchain:       MDK-Lite  Version: 5.35.0.2
+Toolchain Path:  C:\Keil_v5\ARM\ARMCLANG\Bin
+C Compiler:      ArmClang.exe V6.16
+Assembler:       Armasm.exe V6.16
+Linker/Locator:  ArmLink.exe V6.16
+Library Manager: ArmAr.exe V6.16
+Hex Converter:   FromElf.exe V6.16
+CPU DLL:         SARMCM3.DLL V5.35.0.2
+Dialog DLL:      DCM.DLL V1.17.3.0
+Target DLL:      STLink\ST-LINKIII-KEIL_SWO.dll V3.0.9.0
+Dialog DLL:      TCM.DLL V1.53.0.0
+ 
+<h2>Project:</h2>
+E:\FinalProject\FinalProject.uvprojx
+Project File Date:  12/09/2024
+
+<h2>Output:</h2>
+*** Using Compiler 'V6.16', folder: 'C:\Keil_v5\ARM\ARMCLANG\Bin'
+Build target 'Target 1'
+assembling startup_stm32l476xx.s...
+compiling system_stm32l4xx.c...
+LCD.c(26): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
+  GPIOB->ODR &= ~E; //  E=0; 
+             ~~ ^~
+LCD.c(27): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
+        GPIOB->ODR &= ~RS; //   RS=0; 
+                   ~~ ^~~
+LCD.c(34): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
+        GPIOB->ODR &= ~E; //    E=0; 
+                   ~~ ^~
+LCD.c(35): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
+        GPIOB->ODR &= ~RS; //   RS=0;  
+                   ~~ ^~~
+LCD.c(42): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
+        GPIOB->ODR &= ~E; //    E=0; 
+                   ~~ ^~
+LCD.c(52): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
+  GPIOB->ODR &= ~E; //  E=0; 
+             ~~ ^~
+LCD.c(60): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
+        GPIOB->ODR &= ~E; //    E=0; 
+                   ~~ ^~
+LCD.c(68): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
+        GPIOB->ODR &= ~E; //    E=0; 
+                   ~~ ^~
+8 warnings generated.
+compiling LCD.c...
+TicTacToe.c(55): warning: while loop has empty body [-Wempty-body]
+   while ((USART2->ISR & USART_ISR_TEACK) == 0);
+                                               ^
+TicTacToe.c(55): note: put the semicolon on a separate line to silence this warning
+TicTacToe.c(65): warning: comparison of integers of different signs: 'int' and 'uint32_t' (aka 'unsigned int') [-Wsign-compare]
+   for(i = 0; i < nBytes; i++) {
+              ~ ^ ~~~~~~
+TicTacToe.c(79): warning: implicit conversion loses integer precision: 'volatile uint16_t' (aka 'volatile unsigned short') to 'uint8_t' (aka 'unsigned char') [-Wimplicit-int-conversion]
+      buffer[i] = USART2->RDR;
+                ~ ~~~~~~~~^~~
+TicTacToe.c(83): warning: no previous extern declaration for non-static variable 'board' [-Wmissing-variable-declarations]
+char board[3][3] = {
+     ^
+TicTacToe.c(83): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+char board[3][3] = {
+^
+TicTacToe.c(89): warning: no previous extern declaration for non-static variable 'player' [-Wmissing-variable-declarations]
+        int player = 1;
+            ^
+TicTacToe.c(89): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+        int player = 1;
+        ^
+TicTacToe.c(90): warning: no previous extern declaration for non-static variable 'cursorx' [-Wmissing-variable-declarations]
+        int cursorx = 0;
+            ^
+TicTacToe.c(90): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+        int cursorx = 0;
+        ^
+TicTacToe.c(91): warning: no previous extern declaration for non-static variable 'cursory' [-Wmissing-variable-declarations]
+        int cursory = 0;
+            ^
+TicTacToe.c(91): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+        int cursory = 0;
+        ^
+TicTacToe.c(92): warning: no previous extern declaration for non-static variable 'temp' [-Wmissing-variable-declarations]
+        char temp = 0;
+             ^
+TicTacToe.c(92): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+        char temp = 0;
+        ^
+TicTacToe.c(93): warning: no previous extern declaration for non-static variable 'winner' [-Wmissing-variable-declarations]
+        char winner = 0;
+             ^
+TicTacToe.c(93): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+        char winner = 0;
+        ^
+TicTacToe.c(143): warning: passing 'char [14]' to parameter of type 'unsigned char *' converts between pointers to integer types where one is of the unique plain 'char' type and the other is not [-Wpointer-sign]
+                                                                        LCD_DisplayString(0, "Player X wins");
+                                                                                             ^~~~~~~~~~~~~~~
+./LCD.h(12): note: passing argument to parameter 'ptr' here
+void LCD_DisplayString(unsigned int line, unsigned char *ptr);
+                                                         ^
+TicTacToe.c(147): warning: passing 'char [12]' to parameter of type 'unsigned char *' converts between pointers to integer types where one is of the unique plain 'char' type and the other is not [-Wpointer-sign]
+                                                                        LCD_DisplayString(0, "It's a Draw");
+                                                                                             ^~~~~~~~~~~~~
+./LCD.h(12): note: passing argument to parameter 'ptr' here
+void LCD_DisplayString(unsigned int line, unsigned char *ptr);
+                                                         ^
+TicTacToe.c(158): warning: passing 'char [14]' to parameter of type 'unsigned char *' converts between pointers to integer types where one is of the unique plain 'char' type and the other is not [-Wpointer-sign]
+                                                                        LCD_DisplayString(0, "Player O wins");
+                                                                                             ^~~~~~~~~~~~~~~
+./LCD.h(12): note: passing argument to parameter 'ptr' here
+void LCD_DisplayString(unsigned int line, unsigned char *ptr);
+                                                         ^
+TicTacToe.c(162): warning: passing 'char [12]' to parameter of type 'unsigned char *' converts between pointers to integer types where one is of the unique plain 'char' type and the other is not [-Wpointer-sign]
+                                                                        LCD_DisplayString(0, "It's a Draw");
+                                                                                             ^~~~~~~~~~~~~
+./LCD.h(12): note: passing argument to parameter 'ptr' here
+void LCD_DisplayString(unsigned int line, unsigned char *ptr);
+                                                         ^
+TicTacToe.c(202): warning: passing 'char [12]' to parameter of type 'volatile uint8_t *' (aka 'volatile unsigned char *') converts between pointers to integer types where one is of the unique plain 'char' type and the other is not [-Wpointer-sign]
+                USART_Write(Row1, 12);
+                            ^~~~
+TicTacToe.c(63): note: passing argument to parameter 'buffer' here
+void USART_Write(volatile uint8_t *buffer, uint32_t nBytes) {
+                                   ^
+TicTacToe.c(203): warning: passing 'char [12]' to parameter of type 'volatile uint8_t *' (aka 'volatile unsigned char *') converts between pointers to integer types where one is of the unique plain 'char' type and the other is not [-Wpointer-sign]
+                USART_Write(Row5, 12);          
+                            ^~~~
+TicTacToe.c(63): note: passing argument to parameter 'buffer' here
+void USART_Write(volatile uint8_t *buffer, uint32_t nBytes) {
+                                   ^
+TicTacToe.c(207): warning: passing 'char [12]' to parameter of type 'volatile uint8_t *' (aka 'volatile unsigned char *') converts between pointers to integer types where one is of the unique plain 'char' type and the other is not [-Wpointer-sign]
+                USART_Write(Row2, 12);
+                            ^~~~
+TicTacToe.c(63): note: passing argument to parameter 'buffer' here
+void USART_Write(volatile uint8_t *buffer, uint32_t nBytes) {
+                                   ^
+TicTacToe.c(208): warning: passing 'char [12]' to parameter of type 'volatile uint8_t *' (aka 'volatile unsigned char *') converts between pointers to integer types where one is of the unique plain 'char' type and the other is not [-Wpointer-sign]
+                USART_Write(Row5, 12);
+                            ^~~~
+TicTacToe.c(63): note: passing argument to parameter 'buffer' here
+void USART_Write(volatile uint8_t *buffer, uint32_t nBytes) {
+                                   ^
+TicTacToe.c(212): warning: passing 'char [12]' to parameter of type 'volatile uint8_t *' (aka 'volatile unsigned char *') converts between pointers to integer types where one is of the unique plain 'char' type and the other is not [-Wpointer-sign]
+                USART_Write(Row3, 12);
+                            ^~~~
+TicTacToe.c(63): note: passing argument to parameter 'buffer' here
+void USART_Write(volatile uint8_t *buffer, uint32_t nBytes) {
+                                   ^
+TicTacToe.c(213): warning: passing 'char [12]' to parameter of type 'volatile uint8_t *' (aka 'volatile unsigned char *') converts between pointers to integer types where one is of the unique plain 'char' type and the other is not [-Wpointer-sign]
+                USART_Write(Row4, 12);
+                            ^~~~
+TicTacToe.c(63): note: passing argument to parameter 'buffer' here
+void USART_Write(volatile uint8_t *buffer, uint32_t nBytes) {
+                                   ^
+TicTacToe.c(214): warning: passing 'char [12]' to parameter of type 'volatile uint8_t *' (aka 'volatile unsigned char *') converts between pointers to integer types where one is of the unique plain 'char' type and the other is not [-Wpointer-sign]
+                USART_Write(Row4, 12);
+                            ^~~~
+TicTacToe.c(63): note: passing argument to parameter 'buffer' here
+void USART_Write(volatile uint8_t *buffer, uint32_t nBytes) {
+                                   ^
+TicTacToe.c(215): warning: passing 'char [12]' to parameter of type 'volatile uint8_t *' (aka 'volatile unsigned char *') converts between pointers to integer types where one is of the unique plain 'char' type and the other is not [-Wpointer-sign]
+                USART_Write(Row4, 12);
+                            ^~~~
+TicTacToe.c(63): note: passing argument to parameter 'buffer' here
+void USART_Write(volatile uint8_t *buffer, uint32_t nBytes) {
+                                   ^
+TicTacToe.c(216): warning: passing 'char [12]' to parameter of type 'volatile uint8_t *' (aka 'volatile unsigned char *') converts between pointers to integer types where one is of the unique plain 'char' type and the other is not [-Wpointer-sign]
+                USART_Write(Row4, 12);
+                            ^~~~
+TicTacToe.c(63): note: passing argument to parameter 'buffer' here
+void USART_Write(volatile uint8_t *buffer, uint32_t nBytes) {
+                                   ^
+TicTacToe.c(217): warning: passing 'char [12]' to parameter of type 'volatile uint8_t *' (aka 'volatile unsigned char *') converts between pointers to integer types where one is of the unique plain 'char' type and the other is not [-Wpointer-sign]
+                USART_Write(Row4, 12);
+                            ^~~~
+TicTacToe.c(63): note: passing argument to parameter 'buffer' here
+void USART_Write(volatile uint8_t *buffer, uint32_t nBytes) {
+                                   ^
+TicTacToe.c(218): warning: passing 'char [12]' to parameter of type 'volatile uint8_t *' (aka 'volatile unsigned char *') converts between pointers to integer types where one is of the unique plain 'char' type and the other is not [-Wpointer-sign]
+                USART_Write(Row4, 12);
+                            ^~~~
+TicTacToe.c(63): note: passing argument to parameter 'buffer' here
+void USART_Write(volatile uint8_t *buffer, uint32_t nBytes) {
+                                   ^
+TicTacToe.c(219): warning: passing 'char [12]' to parameter of type 'volatile uint8_t *' (aka 'volatile unsigned char *') converts between pointers to integer types where one is of the unique plain 'char' type and the other is not [-Wpointer-sign]
+                USART_Write(Row4, 12);
+                            ^~~~
+TicTacToe.c(63): note: passing argument to parameter 'buffer' here
+void USART_Write(volatile uint8_t *buffer, uint32_t nBytes) {
+                                   ^
+TicTacToe.c(220): warning: passing 'char [12]' to parameter of type 'volatile uint8_t *' (aka 'volatile unsigned char *') converts between pointers to integer types where one is of the unique plain 'char' type and the other is not [-Wpointer-sign]
+                USART_Write(Row4, 12);
+                            ^~~~
+TicTacToe.c(63): note: passing argument to parameter 'buffer' here
+void USART_Write(volatile uint8_t *buffer, uint32_t nBytes) {
+                                   ^
+TicTacToe.c(221): warning: passing 'char [12]' to parameter of type 'volatile uint8_t *' (aka 'volatile unsigned char *') converts between pointers to integer types where one is of the unique plain 'char' type and the other is not [-Wpointer-sign]
+                USART_Write(Row4, 12);
+                            ^~~~
+TicTacToe.c(63): note: passing argument to parameter 'buffer' here
+void USART_Write(volatile uint8_t *buffer, uint32_t nBytes) {
+                                   ^
+TicTacToe.c(247): warning: passing 'char [25]' to parameter of type 'volatile uint8_t *' (aka 'volatile unsigned char *') converts between pointers to integer types where one is of the unique plain 'char' type and the other is not [-Wpointer-sign]
+                USART_Write(Tic, 25);
+                            ^~~
+TicTacToe.c(63): note: passing argument to parameter 'buffer' here
+void USART_Write(volatile uint8_t *buffer, uint32_t nBytes) {
+                                   ^
+TicTacToe.c(248): warning: passing 'char [25]' to parameter of type 'volatile uint8_t *' (aka 'volatile unsigned char *') converts between pointers to integer types where one is of the unique plain 'char' type and the other is not [-Wpointer-sign]
+                USART_Write(Tic1, 25);
+                            ^~~~
+TicTacToe.c(63): note: passing argument to parameter 'buffer' here
+void USART_Write(volatile uint8_t *buffer, uint32_t nBytes) {
+                                   ^
+TicTacToe.c(249): warning: passing 'char [25]' to parameter of type 'volatile uint8_t *' (aka 'volatile unsigned char *') converts between pointers to integer types where one is of the unique plain 'char' type and the other is not [-Wpointer-sign]
+                USART_Write(Tic2, 25);
+                            ^~~~
+TicTacToe.c(63): note: passing argument to parameter 'buffer' here
+void USART_Write(volatile uint8_t *buffer, uint32_t nBytes) {
+                                   ^
+TicTacToe.c(250): warning: passing 'char [25]' to parameter of type 'volatile uint8_t *' (aka 'volatile unsigned char *') converts between pointers to integer types where one is of the unique plain 'char' type and the other is not [-Wpointer-sign]
+                USART_Write(Tic3, 25);
+                            ^~~~
+TicTacToe.c(63): note: passing argument to parameter 'buffer' here
+void USART_Write(volatile uint8_t *buffer, uint32_t nBytes) {
+                                   ^
+TicTacToe.c(251): warning: passing 'char [25]' to parameter of type 'volatile uint8_t *' (aka 'volatile unsigned char *') converts between pointers to integer types where one is of the unique plain 'char' type and the other is not [-Wpointer-sign]
+                USART_Write(Tic4, 25);
+                            ^~~~
+TicTacToe.c(63): note: passing argument to parameter 'buffer' here
+void USART_Write(volatile uint8_t *buffer, uint32_t nBytes) {
+                                   ^
+TicTacToe.c(252): warning: passing 'char [25]' to parameter of type 'volatile uint8_t *' (aka 'volatile unsigned char *') converts between pointers to integer types where one is of the unique plain 'char' type and the other is not [-Wpointer-sign]
+                USART_Write(Tic5, 25);
+                            ^~~~
+TicTacToe.c(63): note: passing argument to parameter 'buffer' here
+void USART_Write(volatile uint8_t *buffer, uint32_t nBytes) {
+                                   ^
+TicTacToe.c(253): warning: passing 'char [1]' to parameter of type 'volatile uint8_t *' (aka 'volatile unsigned char *') converts between pointers to integer types where one is of the unique plain 'char' type and the other is not [-Wpointer-sign]
+                USART_Write(newline, 1);
+                            ^~~~~~~
+TicTacToe.c(63): note: passing argument to parameter 'buffer' here
+void USART_Write(volatile uint8_t *buffer, uint32_t nBytes) {
+                                   ^
+TicTacToe.c(254): warning: passing 'char [1]' to parameter of type 'volatile uint8_t *' (aka 'volatile unsigned char *') converts between pointers to integer types where one is of the unique plain 'char' type and the other is not [-Wpointer-sign]
+                USART_Write(newline, 1);
+                            ^~~~~~~
+TicTacToe.c(63): note: passing argument to parameter 'buffer' here
+void USART_Write(volatile uint8_t *buffer, uint32_t nBytes) {
+                                   ^
+TicTacToe.c(258): warning: passing 'char [25]' to parameter of type 'volatile uint8_t *' (aka 'volatile unsigned char *') converts between pointers to integer types where one is of the unique plain 'char' type and the other is not [-Wpointer-sign]
+                USART_Write(Tac, 25);
+                            ^~~
+TicTacToe.c(63): note: passing argument to parameter 'buffer' here
+void USART_Write(volatile uint8_t *buffer, uint32_t nBytes) {
+                                   ^
+TicTacToe.c(259): warning: passing 'char [25]' to parameter of type 'volatile uint8_t *' (aka 'volatile unsigned char *') converts between pointers to integer types where one is of the unique plain 'char' type and the other is not [-Wpointer-sign]
+                USART_Write(Tac1, 25);
+                            ^~~~
+TicTacToe.c(63): note: passing argument to parameter 'buffer' here
+void USART_Write(volatile uint8_t *buffer, uint32_t nBytes) {
+                                   ^
+TicTacToe.c(260): warning: passing 'char [25]' to parameter of type 'volatile uint8_t *' (aka 'volatile unsigned char *') converts between pointers to integer types where one is of the unique plain 'char' type and the other is not [-Wpointer-sign]
+                USART_Write(Tac2, 25);
+                            ^~~~
+TicTacToe.c(63): note: passing argument to parameter 'buffer' here
+void USART_Write(volatile uint8_t *buffer, uint32_t nBytes) {
+                                   ^
+TicTacToe.c(261): warning: passing 'char [25]' to parameter of type 'volatile uint8_t *' (aka 'volatile unsigned char *') converts between pointers to integer types where one is of the unique plain 'char' type and the other is not [-Wpointer-sign]
+                USART_Write(Tac3, 25);
+                            ^~~~
+TicTacToe.c(63): note: passing argument to parameter 'buffer' here
+void USART_Write(volatile uint8_t *buffer, uint32_t nBytes) {
+                                   ^
+TicTacToe.c(262): warning: passing 'char [25]' to parameter of type 'volatile uint8_t *' (aka 'volatile unsigned char *') converts between pointers to integer types where one is of the unique plain 'char' type and the other is not [-Wpointer-sign]
+                USART_Write(Tac4, 25);
+                            ^~~~
+TicTacToe.c(63): note: passing argument to parameter 'buffer' here
+void USART_Write(volatile uint8_t *buffer, uint32_t nBytes) {
+                                   ^
+TicTacToe.c(263): warning: passing 'char [25]' to parameter of type 'volatile uint8_t *' (aka 'volatile unsigned char *') converts between pointers to integer types where one is of the unique plain 'char' type and the other is not [-Wpointer-sign]
+                USART_Write(Tac5, 25);
+                            ^~~~
+TicTacToe.c(63): note: passing argument to parameter 'buffer' here
+void USART_Write(volatile uint8_t *buffer, uint32_t nBytes) {
+                                   ^
+TicTacToe.c(264): warning: passing 'char [1]' to parameter of type 'volatile uint8_t *' (aka 'volatile unsigned char *') converts between pointers to integer types where one is of the unique plain 'char' type and the other is not [-Wpointer-sign]
+                USART_Write(newline, 1);
+                            ^~~~~~~
+TicTacToe.c(63): note: passing argument to parameter 'buffer' here
+void USART_Write(volatile uint8_t *buffer, uint32_t nBytes) {
+                                   ^
+TicTacToe.c(265): warning: passing 'char [1]' to parameter of type 'volatile uint8_t *' (aka 'volatile unsigned char *') converts between pointers to integer types where one is of the unique plain 'char' type and the other is not [-Wpointer-sign]
+                USART_Write(newline, 1);
+                            ^~~~~~~
+TicTacToe.c(63): note: passing argument to parameter 'buffer' here
+void USART_Write(volatile uint8_t *buffer, uint32_t nBytes) {
+                                   ^
+TicTacToe.c(269): warning: passing 'char [27]' to parameter of type 'volatile uint8_t *' (aka 'volatile unsigned char *') converts between pointers to integer types where one is of the unique plain 'char' type and the other is not [-Wpointer-sign]
+                USART_Write(Toe, 27);
+                            ^~~
+TicTacToe.c(63): note: passing argument to parameter 'buffer' here
+void USART_Write(volatile uint8_t *buffer, uint32_t nBytes) {
+                                   ^
+TicTacToe.c(270): warning: passing 'char [27]' to parameter of type 'volatile uint8_t *' (aka 'volatile unsigned char *') converts between pointers to integer types where one is of the unique plain 'char' type and the other is not [-Wpointer-sign]
+                USART_Write(Toe1, 27);
+                            ^~~~
+TicTacToe.c(63): note: passing argument to parameter 'buffer' here
+void USART_Write(volatile uint8_t *buffer, uint32_t nBytes) {
+                                   ^
+TicTacToe.c(271): warning: passing 'char [27]' to parameter of type 'volatile uint8_t *' (aka 'volatile unsigned char *') converts between pointers to integer types where one is of the unique plain 'char' type and the other is not [-Wpointer-sign]
+                USART_Write(Toe2, 27);
+                            ^~~~
+TicTacToe.c(63): note: passing argument to parameter 'buffer' here
+void USART_Write(volatile uint8_t *buffer, uint32_t nBytes) {
+                                   ^
+TicTacToe.c(272): warning: passing 'char [27]' to parameter of type 'volatile uint8_t *' (aka 'volatile unsigned char *') converts between pointers to integer types where one is of the unique plain 'char' type and the other is not [-Wpointer-sign]
+                USART_Write(Toe3, 27);
+                            ^~~~
+TicTacToe.c(63): note: passing argument to parameter 'buffer' here
+void USART_Write(volatile uint8_t *buffer, uint32_t nBytes) {
+                                   ^
+TicTacToe.c(273): warning: passing 'char [27]' to parameter of type 'volatile uint8_t *' (aka 'volatile unsigned char *') converts between pointers to integer types where one is of the unique plain 'char' type and the other is not [-Wpointer-sign]
+                USART_Write(Toe4, 27);
+                            ^~~~
+TicTacToe.c(63): note: passing argument to parameter 'buffer' here
+void USART_Write(volatile uint8_t *buffer, uint32_t nBytes) {
+                                   ^
+TicTacToe.c(274): warning: passing 'char [27]' to parameter of type 'volatile uint8_t *' (aka 'volatile unsigned char *') converts between pointers to integer types where one is of the unique plain 'char' type and the other is not [-Wpointer-sign]
+                USART_Write(Toe5, 27);
+                            ^~~~
+TicTacToe.c(63): note: passing argument to parameter 'buffer' here
+void USART_Write(volatile uint8_t *buffer, uint32_t nBytes) {
+                                   ^
+TicTacToe.c(275): warning: passing 'char [1]' to parameter of type 'volatile uint8_t *' (aka 'volatile unsigned char *') converts between pointers to integer types where one is of the unique plain 'char' type and the other is not [-Wpointer-sign]
+                USART_Write(newline, 1);
+                            ^~~~~~~
+TicTacToe.c(63): note: passing argument to parameter 'buffer' here
+void USART_Write(volatile uint8_t *buffer, uint32_t nBytes) {
+                                   ^
+TicTacToe.c(276): warning: passing 'char [1]' to parameter of type 'volatile uint8_t *' (aka 'volatile unsigned char *') converts between pointers to integer types where one is of the unique plain 'char' type and the other is not [-Wpointer-sign]
+                USART_Write(newline, 1);
+                            ^~~~~~~
+TicTacToe.c(63): note: passing argument to parameter 'buffer' here
+void USART_Write(volatile uint8_t *buffer, uint32_t nBytes) {
+                                   ^
+TicTacToe.c(297): warning: passing 'char [33]' to parameter of type 'volatile uint8_t *' (aka 'volatile unsigned char *') converts between pointers to integer types where one is of the unique plain 'char' type and the other is not [-Wpointer-sign]
+                USART_Write(Game, 33);
+                            ^~~~
+TicTacToe.c(63): note: passing argument to parameter 'buffer' here
+void USART_Write(volatile uint8_t *buffer, uint32_t nBytes) {
+                                   ^
+TicTacToe.c(298): warning: passing 'char [33]' to parameter of type 'volatile uint8_t *' (aka 'volatile unsigned char *') converts between pointers to integer types where one is of the unique plain 'char' type and the other is not [-Wpointer-sign]
+    USART_Write(Game1, 33);
+                ^~~~~
+TicTacToe.c(63): note: passing argument to parameter 'buffer' here
+void USART_Write(volatile uint8_t *buffer, uint32_t nBytes) {
+                                   ^
+TicTacToe.c(299): warning: passing 'char [33]' to parameter of type 'volatile uint8_t *' (aka 'volatile unsigned char *') converts between pointers to integer types where one is of the unique plain 'char' type and the other is not [-Wpointer-sign]
+    USART_Write(Game2, 33);
+                ^~~~~
+TicTacToe.c(63): note: passing argument to parameter 'buffer' here
+void USART_Write(volatile uint8_t *buffer, uint32_t nBytes) {
+                                   ^
+TicTacToe.c(300): warning: passing 'char [33]' to parameter of type 'volatile uint8_t *' (aka 'volatile unsigned char *') converts between pointers to integer types where one is of the unique plain 'char' type and the other is not [-Wpointer-sign]
+    USART_Write(Game3, 33);
+                ^~~~~
+TicTacToe.c(63): note: passing argument to parameter 'buffer' here
+void USART_Write(volatile uint8_t *buffer, uint32_t nBytes) {
+                                   ^
+TicTacToe.c(301): warning: passing 'char [33]' to parameter of type 'volatile uint8_t *' (aka 'volatile unsigned char *') converts between pointers to integer types where one is of the unique plain 'char' type and the other is not [-Wpointer-sign]
+    USART_Write(Game4, 33);
+                ^~~~~
+TicTacToe.c(63): note: passing argument to parameter 'buffer' here
+void USART_Write(volatile uint8_t *buffer, uint32_t nBytes) {
+                                   ^
+TicTacToe.c(302): warning: passing 'char [33]' to parameter of type 'volatile uint8_t *' (aka 'volatile unsigned char *') converts between pointers to integer types where one is of the unique plain 'char' type and the other is not [-Wpointer-sign]
+                USART_Write(Game5, 33);
+                            ^~~~~
+TicTacToe.c(63): note: passing argument to parameter 'buffer' here
+void USART_Write(volatile uint8_t *buffer, uint32_t nBytes) {
+                                   ^
+TicTacToe.c(303): warning: passing 'char [1]' to parameter of type 'volatile uint8_t *' (aka 'volatile unsigned char *') converts between pointers to integer types where one is of the unique plain 'char' type and the other is not [-Wpointer-sign]
+    USART_Write(newline, 1);
+                ^~~~~~~
+TicTacToe.c(63): note: passing argument to parameter 'buffer' here
+void USART_Write(volatile uint8_t *buffer, uint32_t nBytes) {
+                                   ^
+TicTacToe.c(307): warning: passing 'char [33]' to parameter of type 'volatile uint8_t *' (aka 'volatile unsigned char *') converts between pointers to integer types where one is of the unique plain 'char' type and the other is not [-Wpointer-sign]
+    USART_Write(Over, 33);
+                ^~~~
+TicTacToe.c(63): note: passing argument to parameter 'buffer' here
+void USART_Write(volatile uint8_t *buffer, uint32_t nBytes) {
+                                   ^
+TicTacToe.c(308): warning: passing 'char [33]' to parameter of type 'volatile uint8_t *' (aka 'volatile unsigned char *') converts between pointers to integer types where one is of the unique plain 'char' type and the other is not [-Wpointer-sign]
+    USART_Write(Over1, 33);
+                ^~~~~
+TicTacToe.c(63): note: passing argument to parameter 'buffer' here
+void USART_Write(volatile uint8_t *buffer, uint32_t nBytes) {
+                                   ^
+TicTacToe.c(309): warning: passing 'char [33]' to parameter of type 'volatile uint8_t *' (aka 'volatile unsigned char *') converts between pointers to integer types where one is of the unique plain 'char' type and the other is not [-Wpointer-sign]
+    USART_Write(Over2, 33);
+                ^~~~~
+TicTacToe.c(63): note: passing argument to parameter 'buffer' here
+void USART_Write(volatile uint8_t *buffer, uint32_t nBytes) {
+                                   ^
+TicTacToe.c(310): warning: passing 'char [33]' to parameter of type 'volatile uint8_t *' (aka 'volatile unsigned char *') converts between pointers to integer types where one is of the unique plain 'char' type and the other is not [-Wpointer-sign]
+    USART_Write(Over3, 33);
+                ^~~~~
+TicTacToe.c(63): note: passing argument to parameter 'buffer' here
+void USART_Write(volatile uint8_t *buffer, uint32_t nBytes) {
+                                   ^
+TicTacToe.c(311): warning: passing 'char [33]' to parameter of type 'volatile uint8_t *' (aka 'volatile unsigned char *') converts between pointers to integer types where one is of the unique plain 'char' type and the other is not [-Wpointer-sign]
+    USART_Write(Over4, 33);
+                ^~~~~
+TicTacToe.c(63): note: passing argument to parameter 'buffer' here
+void USART_Write(volatile uint8_t *buffer, uint32_t nBytes) {
+                                   ^
+TicTacToe.c(312): warning: passing 'char [33]' to parameter of type 'volatile uint8_t *' (aka 'volatile unsigned char *') converts between pointers to integer types where one is of the unique plain 'char' type and the other is not [-Wpointer-sign]
+                USART_Write(Over5, 33);
+                            ^~~~~
+TicTacToe.c(63): note: passing argument to parameter 'buffer' here
+void USART_Write(volatile uint8_t *buffer, uint32_t nBytes) {
+                                   ^
+TicTacToe.c(313): warning: passing 'char [1]' to parameter of type 'volatile uint8_t *' (aka 'volatile unsigned char *') converts between pointers to integer types where one is of the unique plain 'char' type and the other is not [-Wpointer-sign]
+    USART_Write(newline, 1);
+                ^~~~~~~
+TicTacToe.c(63): note: passing argument to parameter 'buffer' here
+void USART_Write(volatile uint8_t *buffer, uint32_t nBytes) {
+                                   ^
+TicTacToe.c(371): warning: passing 'char [12]' to parameter of type 'unsigned char *' converts between pointers to integer types where one is of the unique plain 'char' type and the other is not [-Wpointer-sign]
+         LCD_DisplayString(0, "Tic-Tac-Toe");
+                              ^~~~~~~~~~~~~
+./LCD.h(12): note: passing argument to parameter 'ptr' here
+void LCD_DisplayString(unsigned int line, unsigned char *ptr);
+                                                         ^
+TicTacToe.c(361): warning: while loop has empty body [-Wempty-body]
+         while((RCC->CR & RCC_CR_HSIRDY) == 0);  //HSI clock enable
+                                              ^
+TicTacToe.c(361): note: put the semicolon on a separate line to silence this warning
+67 warnings generated.
+compiling TicTacToe.c...
+linking...
+Program Size: Code=3880 RO-data=1372 RW-data=16 ZI-data=1648  
+".\Objects\FinalProject.axf" - 0 Error(s), 75 Warning(s).
+
+<h2>Software Packages used:</h2>
+
+Package Vendor: ARM
+                https://www.keil.com/pack/ARM.CMSIS.6.0.0.pack
+                ARM.CMSIS.6.0.0
+                CMSIS (Common Microcontroller Software Interface Standard)
+   * Component: CORE Version: 6.0.0
+
+Package Vendor: Keil
+                https://www.keil.com/pack/Keil.STM32L4xx_DFP.2.6.2.pack
+                Keil.STM32L4xx_DFP.2.6.2
+                STMicroelectronics STM32L4 Series Device Support, Drivers and Examples
+   * Component: Startup Version: 1.3.1
+
+<h2>Collection of Component include folders:</h2>
+  .\RTE\_Target_1
+  C:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\6.0.0\CMSIS\Core\Include
+  C:\Users\Admin\AppData\Local\Arm\Packs\Keil\STM32L4xx_DFP\2.6.2\Drivers\CMSIS\Device\ST\STM32L4xx\Include
+
+<h2>Collection of Component Files used:</h2>
+
+   * Component: ARM::CMSIS:CORE:6.0.0
+
+   * Component: Keil::Device:Startup:1.3.1
+      Source file:   MDK\Device\Source\ARM\STM32L4xx_DB_OPT.s
+      Include file:  Drivers\CMSIS\Device\ST\STM32L4xx\Include\stm32l4xx.h
+      Source file:   Drivers\CMSIS\Device\ST\STM32L4xx\Source\Templates\system_stm32l4xx.c
+      Source file:   Drivers\CMSIS\Device\ST\STM32L4xx\Source\Templates\arm\startup_stm32l476xx.s
+Build Time Elapsed:  00:00:02
+</pre>
+</body>
+</html>
